@@ -1,0 +1,19 @@
+<div>
+	<div>
+		<form action="/create" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="text" name="user[name]" placeholder="Your Name">
+			<select name="user[dojolocation]">
+				<option>Dallas</option>
+				<option>Seattle</option>
+			</select>
+			<select name="user[favlanguage]">
+				<option>JS</option>
+				<option>HTML</option>
+				<option>Ruby</option>
+			</select>
+			<input type="textarea" name="user[comment]" placeholder="Comment(optional)">
+			<button type="submit">Create</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,1 @@
+Friend.joins(:user).where.not("user_id = 2").select("users.first_name, users.last_name, users.id")

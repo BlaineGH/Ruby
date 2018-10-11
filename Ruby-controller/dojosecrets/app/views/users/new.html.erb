@@ -1,0 +1,27 @@
+<% content_for :left_column do %>
+	<h1>New User</h1>
+	<% if flash[:errors] %>
+	<ul>
+		<% flash[:errors].each do |error| %>
+		<li class="errors"><%= error %></li>
+		<% end %>
+	</ul>
+	<% end %>
+	<form action="/users" method="post">
+		<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+		<div class="form-group">
+			<input type="text" class="form-control" name="user[email]" placeholder="Email">
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" name="user[name]" placeholder="Name">
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control" name="user[password]" placeholder="Password">
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control" name="user[password_confirmation]" placeholder="Confirm Password">
+		</div>
+		<input type="submit" value="Join" class="btn btn-primary">
+	</form>
+	<a id="link" class="btn btn-primary" role="button" href="/sessions/new">Go Back</a>
+<% end %>
